@@ -1,0 +1,31 @@
+version: '3'
+services:
+  svn:
+    hostname: svn
+    build: ./
+    depends_on:
+      - mysql
+    ports:
+      - "80:80"
+      #- "8090:80"
+    restart: always
+    volumes:
+      - /home/utu18/home/svn:/data/svn
+      #- /home/docker-data/svn:/data/svn
+    environment:
+       PRODUCTION: "true"
+  mysql:
+    hostname: mysql
+    image: mysql:5.6
+    #command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    restart: always
+    volumes:
+      - /home/docker-data/mysql/5.6/conf:/etc/mysql/conf.d/ 
+      - /home/docker-data/mysql/5.6/logs:/logs 
+      - /home/docker-data/mysql/5.6/data:/var/lib/mysql  
+    environment:
+      MYSQL_ROOT_PASSWORD: 123123
+      #MYSQL_USER: svnsqluser
+      #MYSQL_PASSWORD: svnsqlpassword
