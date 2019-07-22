@@ -70,7 +70,7 @@ Order allow,deny \n\
 Allow from 222.35.42.189 \n\
 Allow from 192.168.14.0/24 \n\
 Allow from 192.168.12.0/24 \n\
-Allow from 172.23.0.0/24 \n\
+Allow from 172.23.0.0/16 \n\
 #Allow from 192.168.50.0/24 \n\
 Require all granted \n\
 </Directory> \n\
@@ -88,7 +88,7 @@ Require all granted \n\
 	Allow from 222.35.42.189 \n\
 	Allow from 192.168.14.0/24 \n\
 	Allow from 192.168.12.0/24 \n\
-	Allow from 172.23.0.0/24 \n\
+	Allow from 172.23.0.0/16 \n\
 	#Allow from 192.168.50.0/24 \n\
         #Allow from 192.168.11.0/24 \n\
         #Allow from 127 \n\
