@@ -68,7 +68,10 @@ AllowOverride All \n\
 Order allow,deny \n\
 #Allow from all \n\
 Allow from 222.35.42.189 \n\
-Allow from 192.168.50.0/24 \n\
+Allow from 192.168.14.0/24 \n\
+Allow from 192.168.12.0/24 \n\
+Allow from 172.23.0.0/24 \n\
+#Allow from 192.168.50.0/24 \n\
 Require all granted \n\
 </Directory> \n\
 </VirtualHost>\n\
@@ -83,7 +86,10 @@ Require all granted \n\
         AuthUserFile ${repos}/svn.passwd \n\
         Order allow,deny \n\
 	Allow from 222.35.42.189 \n\
-	Allow from 192.168.50.0/24 \n\
+	Allow from 192.168.14.0/24 \n\
+	Allow from 192.168.12.0/24 \n\
+	Allow from 172.23.0.0/24 \n\
+	#Allow from 192.168.50.0/24 \n\
         #Allow from 192.168.11.0/24 \n\
         #Allow from 127 \n\
         #Allow from All \n\
@@ -99,7 +105,6 @@ RUN sed -i \
 	-e 's,.*$dsn.*,$dsn = "mysqli://svnuser:svnpassword@172.17.0.2/svn_manager";,' \
 	-e 's,.*$svn_trash_loc.*,$svn_trash_loc = "'"$repos"'/trash";,' \
 	${dir}${cname}_${servn}/public_html/${svnmg}/config.php
-
 
 RUN sed -i \
         -e 's/^expose_php = .*/expose_php = Off/' \
